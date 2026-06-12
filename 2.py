@@ -54,31 +54,30 @@ while i < len(ratings):
 
 print(content_ratings)
 
+#4. Write a Python program that generates a random number between 1 and 10 and
+#prompts the user to guess the number. The program should provide hints such as
+#guess higher or guess lower based on the user's input. Once the user guesses the
+#correct number, the program should display the number of attempts it took to guess
+#the correct number
 
-# Generate a random number between 1 and 10
 secret_number = random.randint(1, 10)
+
 attempts = 0
 
-print("I've picked a random number between 1 and 10. Try to guess it!")
+print("Guess a number between 1 and 10")
 
 while True:
-    user_guess = input("Enter your guess: ").strip()
-    
-    if not user_guess.isdigit():
-        print("Please enter a valid whole number.")
-        continue
-        
-    guess = int(user_guess)
-    attempts += 1  
-    
-    if guess < secret_number:
-        print("guess higher")
-    elif guess > secret_number:
-        print("guess lower")
-    else:
-        print(f"Correct! It took you {attempts} attempts to guess the number.")
-        break  # Correct guess, exit the game
+    guess = int(input("Enter your guess: "))
+    attempts += 1
 
+    if guess < secret_number:
+        print("Guess higher!")
+    elif guess > secret_number:
+        print("Guess lower!")
+    else:
+        print("Congratulations! You guessed the correct number.")
+        print("Number of attempts:", attempts)
+        break
 
 # 5. Write a Python program that simulates a login system. The program should prompt
 # the user to enter a username and password. If both are correct for example username
